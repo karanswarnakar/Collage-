@@ -1,20 +1,19 @@
-def bestfs(start, goal):
+def beam(start, goal, width):
     q = [start]
     visited = []
-    
     while(q):
-        q.sort(key=lambda x: h[x])
-        y = q.pop(0)
-        
-        visited.append(y)  
-        
-        if y == goal:
-            print(visited)
-            return
-        
-        for i in graph[y]:
-            if i not in q and i not in visited:
-                q.append(i)
+        new = []
+        for y in q:
+            visited.append(y)
+            if  y == goal:
+                print(visited)
+                return
+            for i in graph[y]:
+                if i not in q and i not in visited:
+                    new.append(i)
+        new.sort(key=lambda x:h[x])
+        q = new[:width]
+
 graph = {
     "A":["B","C"],
     "B":["D","E"],
@@ -42,5 +41,5 @@ h = {
     "J":99,
     "K":99,
     "L":3
-}   
-bestfs("A", "H")
+}
+beam("A", "H",2)
