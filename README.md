@@ -2,4 +2,4 @@
 - Listing all topics
 - Add all DAA class code
 - Add Algo
-  
+- Add Design and thinking 
