@@ -2,4 +2,5 @@
 - Listing all topics
 - Add all DAA class code
 - Add Algo
-- Add Design and thinking 
+- Add Design and thinking
+- logic fix of internal loop
